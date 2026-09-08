@@ -1,0 +1,25 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+venv/
+env/
+
+# Large genomic data & outputs
+*.bam
+*.bai
+*.sam
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.fa
+*.fasta
+*.npy
+
+# Output folders
+results_*/
+hic_v2_output/
+universal_hic_output/
+zoomed_regions/
