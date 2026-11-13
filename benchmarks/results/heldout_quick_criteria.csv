@@ -1,0 +1,8 @@
+criterion,measured,verdict
+H1 clean: maps with any v2 call <= 0.153,0.000 of 18 maps; 0.000 calls/map; legacy 3.33 regions/map,PASS
+"H2 call-level FDP <= 0.10 (q=0.05, pooled event maps)","0.062 (single 0.070, mixed 0.000)",PASS
+H3 v2 2D F1 >= 0.80 (pooled incl. clean FPs),0.565,FAIL
+H4 v2 1D F1 > legacy F1 and PR-AUC > legacy,F1 0.615 vs 0.076; AP 0.629 vs 0.031,PASS
+H5 v2 2D PR-AUC >= 0.90,0.555,FAIL
+H6 v2 localization mean <= 2 bins,0.77 (legacy 4.45),PASS
+H7 mixed maps: recall >= 0.7,R 0.167 P 1.000 F1 0.286,FAIL

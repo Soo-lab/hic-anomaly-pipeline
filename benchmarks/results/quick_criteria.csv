@@ -1,0 +1,17 @@
+criterion,measured,verdict
+C1 clean maps: v2 does not force hits (maps with >=1 call <= 0.176),v2 0.000 of 12 maps (0.000 calls/map); legacy 1.83 regions/map (2.00 bins/map),PASS
+"C2 v2 F1 >= legacy F1 (1D, +-2 bins) in every N x depth config",v2 wins 3/3; pooled F1 v2 0.935 vs legacy 0.055,PASS
+C3 v2 PR-AUC >= legacy PR-AUC (1D) in every config,v2 wins 3/3; pooled AP v2 0.946 vs legacy 0.067,PASS
+C4 v2 pair recall (2D) >= 0.8 pooled,0.917 (CNV recall 0.944),PASS
+"C5 v2 localization error of detected junctions <= 2 bins (mean, within 10)",v2 2D 0.82; v2 1D 0.07; legacy 1D 3.80,PASS
+"C6 null p-values: frac p<0.05 in [0.04,0.06] and thinned KS p>0.01, every config",frac range 0.0499-0.0499; min thinned KS p nan,PARTIAL
+C7 null tail: frac p<1e-3 <= 2e-3 in every config,max 1.03e-03 (p<1e-4: max 8.31e-05),PASS
+C8 call-level FDR on planted maps: pooled FDP <= 0.05 (strict +-2 / +-10 / calls sharing no breakpoint coordinate),strict 0.154; +-10 0.154; unrelated 0.115; 1.2 calls/map from 0 significant pixels/map,FAIL
+C9 seed reproducibility: identical output for identical seed,8/8 maps identical; v2 fdr=1 superset consistent on 122/124 maps,FAIL
+C10 residual bias / pipeline robustness: clean maps with >=1 pair call <= 0.130,bias_raw 0.00; bias_ice 0.00; nobias_ice 0.00; asis_dense 0.00; asis_sparse 0.00; struct_ref 0.00; struct_ice 0.00,PASS
+C11 typing accuracy of matched v2 calls >= 0.8 for each SV kind,deletion 0.75; dup 1.00; inversion 1.00; butterfly 1.00,PARTIAL
+"C12 crossref type-I at alpha 0.05 (well-specified nulls): beta-binomial in [0.035,0.065]",beta-binomial 0.018-0.040; t-test 0.035-0.063,PARTIAL
+C13 crossref power: beta-binomial >= t-test in every well-specified alt cell,wins 14/15; mean power 0.759 vs 0.650,PARTIAL
+"C14 crossref under misspecification (block-correlated bins, reference bias): beta-binomial type-I <= 0.065",rho0.02_d200_L10_blockcorr5 0.088 (t 0.427); rho0.02_d200_L10_refbias0.53 0.023 (t 0.205),FAIL
+C15 independent reproduction of delve-stats numbers,6/7 reproduced,PARTIAL
+C16 PR-curve JSON renders with viz.plot_pr_curves,True,PASS

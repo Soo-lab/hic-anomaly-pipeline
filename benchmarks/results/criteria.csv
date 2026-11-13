@@ -1,0 +1,17 @@
+criterion,measured,verdict
+C1 clean maps: v2 does not force hits (maps with >=1 call <= 0.082),v2 0.000 of 180 maps (0.000 calls/map); legacy 2.11 regions/map (3.00 bins/map),PASS
+"C2 v2 F1 >= legacy F1 (1D, +-2 bins) in every N x depth config",v2 wins 4/6; pooled F1 v2 0.071 vs legacy 0.062,PARTIAL
+C3 v2 PR-AUC >= legacy PR-AUC (1D) in every config,v2 wins 6/6; pooled AP v2 0.191 vs legacy 0.042,PASS
+C4 v2 pair recall (2D) >= 0.8 pooled,0.517 (CNV recall 0.000),PARTIAL
+"C5 v2 localization error of detected junctions <= 2 bins (mean, within 10)",v2 2D 3.22; v2 1D 0.81; legacy 1D 2.57,FAIL
+"C6 null p-values: frac p<0.05 in [0.04,0.06] and thinned KS p>0.01, every config",frac range 0.0426-0.0493; min thinned KS p 0.013,PASS
+C7 null tail: frac p<1e-3 <= 2e-3 in every config,max 9.95e-04 (p<1e-4: max 9.84e-05),PASS
+C8 call-level FDR on planted maps: pooled FDP <= 0.05 (strict +-2 / +-10 / calls sharing no breakpoint coordinate),strict 0.982; +-10 0.967; unrelated 0.806; 29.4 calls/map from 2584 significant pixels/map,FAIL
+C9 seed reproducibility: identical output for identical seed,8/8 maps identical; v2 fdr=1 superset consistent on 960/960 maps,PASS
+C10 residual bias / pipeline robustness: clean maps with >=1 pair call <= 0.130,bias_raw 0.23; bias_ice 0.93; nobias_ice 1.00; asis_dense 0.00; asis_sparse 0.00; struct_ref 1.00; struct_ice 1.00,FAIL
+C11 typing accuracy of matched v2 calls >= 0.8 for each SV kind,deletion 0.00; dup 0.00; inversion 0.88; butterfly 0.61,PARTIAL
+"C12 crossref type-I at alpha 0.05 (well-specified nulls): beta-binomial in [0.035,0.065]",beta-binomial 0.032-0.042; t-test 0.046-0.059,PARTIAL
+C13 crossref power: beta-binomial >= t-test in every well-specified alt cell,wins 14/15; mean power 0.752 vs 0.699,PARTIAL
+"C14 crossref under misspecification (block-correlated bins, reference bias): beta-binomial type-I <= 0.065",rho0.02_d200_L10_blockcorr5 0.318 (t 0.442); rho0.02_d200_L10_refbias0.53 0.161 (t 0.194),FAIL
+C15 independent reproduction of delve-stats numbers,7/7 reproduced,PASS
+C16 PR-curve JSON renders with viz.plot_pr_curves,True,PASS

@@ -1,0 +1,9 @@
+kind,rep,identical_same_seed,n_seeds,seeds_detecting,calls_min,calls_max,mean_jaccard
+deletion,0,True,3,3.0,1,1,1.0
+inversion,0,True,3,3.0,1,1,1.0
+butterfly,0,True,3,3.0,1,1,1.0
+dup,0,True,3,3.0,1,1,1.0
+clean,0,True,3,,0,0,
+clean,1,True,3,,0,0,
+clean,2,True,3,,0,0,
+clean,3,True,3,,0,0,

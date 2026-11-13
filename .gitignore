@@ -23,3 +23,18 @@ results_*/
 hic_v2_output/
 universal_hic_output/
 zoomed_regions/
+
+# Packaging / tooling
+.venv/
+venv/
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.pre-commit-cache/
