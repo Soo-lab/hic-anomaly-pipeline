@@ -16,3 +16,16 @@ def toy_matrix():
     m = np.triu(m) + np.triu(m, 1).T
     m[15:20, 15:20] += 60
     return m
+
+
+@pytest.fixture(autouse=True)
+def _restore_package_logger():
+    """cli._configure_logging mutates the package logger globally; undo it per test."""
+    import logging
+
+    pkg = logging.getLogger("hic_anomaly")
+    state = (list(pkg.handlers), pkg.level, pkg.propagate)
+    yield
+    pkg.handlers[:] = state[0]
+    pkg.setLevel(state[1])
+    pkg.propagate = state[2]
