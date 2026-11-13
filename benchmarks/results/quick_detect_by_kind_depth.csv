@@ -1,0 +1,13 @@
+kind,depth_name,n,leg_1d_R,v2_1d_R,v2_pair_R,v2_pair_loc,v2_pair_calls
+deletion,low,200,0.5,1.0,0.0,,0.0
+dup,low,200,0.0,1.0,1.0,1.5,2.5
+inversion,low,200,0.0,1.0,1.0,0.0,1.0
+butterfly,low,200,0.0,1.0,1.0,1.0,1.0
+deletion,mid,200,0.5,1.0,1.0,1.0,1.0
+dup,mid,200,0.0,1.0,1.0,1.5,1.0
+inversion,mid,200,0.0,1.0,1.0,0.0,1.0
+butterfly,mid,200,0.0,1.0,1.0,1.0,1.0
+deletion,high,200,0.0,1.0,1.0,1.0,1.0
+dup,high,200,0.5,1.0,1.0,1.0,1.0
+inversion,high,200,0.0,1.0,1.0,0.0,1.5
+butterfly,high,200,0.0,1.0,1.0,1.0,1.0

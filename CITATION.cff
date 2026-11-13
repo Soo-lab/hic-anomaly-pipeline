@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "hic-anomaly-pipeline"
+abstract: "Unsupervised detection of candidate structural variants and copy-number segments in Hi-C contact maps, with empirical-null q-values and an allelic-imbalance cross-check."
+version: 0.2.0
+authors:
+  - name: "Soo-lab"
+license: MIT
+repository-code: "https://github.com/Soo-lab/hic-anomaly-pipeline"
+keywords:
+  - Hi-C
+  - structural variants
+  - copy number
+  - anomaly detection
+  - allelic imbalance
